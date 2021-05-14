@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: 'Archivo', sans-serif;
+  width: 100vw;
+  overflow-x: hidden;
+}
+
+select:active, 
+select:focus,
+button:focus {
+  outline: none;
+}

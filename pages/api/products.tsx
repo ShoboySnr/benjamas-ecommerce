@@ -1,0 +1,17 @@
+import { getProducts } from '~utils/fauna';
+
+export default async function handler(req, res) {
+  if(req.method !== 'GET') {
+    return res.status(405);
+  }
+
+  try {
+    const products = await getProducts();
+
+    return res.status(200).json(products);
+
+  } catch (err) {
+    console.log(err);
+    res.status(500).json({msg: 'Something went wrong.'})
+  }
+}
